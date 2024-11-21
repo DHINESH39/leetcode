@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+// Function to check if a substring exists within a main string
+bool isSubstring(char *mainStr, char *subStr) {
+    int i, j;
+    for (i = 0; mainStr[i] != '\0'; i++) {
+        for (j = 0; subStr[j] != '\0'; j++) {
+            if (mainStr[i + j] != subStr[j]) {
+                break;
+            }
+        }
+        if (subStr[j] == '\0') {
+            return true;
+        }
+    }
+    return false;
+}
+
+int main() {
+    char mainStr[] = "Hello, world!";
+    char subStr[] = "world";
+
+    if (isSubstring(mainStr, subStr)) {
+        printf("The substring exists within the main string.\n");
+    } else {
+        printf("The substring does not exist within the main string.\n");
+    }
+
+    return 0;
+}
