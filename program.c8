@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+// Function to remove all occurrences of a character from a string
+void removeCharacter(char *str, char ch) {
+    int i, j = 0;
+    while (str[i] != '\0') {
+        if (str[i] != ch) {
+            str[j++] = str[i];
+        }
+        i++;
+    }
+    str[j] = '\0';
+}
+
+int main() {
+    char inputString[] = "Hello, world!";
+    char characterToRemove = 'o';
+    
+    printf("Original string:
