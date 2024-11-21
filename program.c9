@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <ctype.h>
+
+// Function to convert case of all letters in a string
+void convertCase(char *str) {
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (islower(str[i])) {
+            str[i] = toupper(str[i]);
+        } else if (isupper(str[i])) {
+            str[i] = tolower(str[i]);
+        }
+    }
+}
+
+int main() {
+    char inputString[] = "Hello, World!";
+    
+    printf("Original string: %s\n", inputString);
+
+    convertCase(inputString);
+    
+    printf("Modified string: %s\n", inputString);
+    
+    return 0;
+}
