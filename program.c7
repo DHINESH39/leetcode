@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+// Function to count occurrences of a character in a string
+int countOccurrences(char *str, char ch) {
+    int count = 0;
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] == ch) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    char inputString[] = "Hello, world!";
+    char characterToCount = 'o';
+    
+    int occurrences = countOccurrences(inputString, characterToCount);
+    
+    printf("The character '%c' appears %d times in the string.\n", characterToCount, occurrences);
+    
+    return 0;
+}
